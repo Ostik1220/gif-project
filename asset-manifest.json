@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/gif-project/static/css/main.478f6451.css",
+    "main.js": "/gif-project/static/js/main.4dbf7bf3.js",
+    "static/media/dvdify-animation-1765035886000.gif": "/gif-project/static/media/dvdify-animation-1765035886000.ba820ca61ec774c7e68c.gif",
+    "index.html": "/gif-project/index.html",
+    "main.478f6451.css.map": "/gif-project/static/css/main.478f6451.css.map",
+    "main.4dbf7bf3.js.map": "/gif-project/static/js/main.4dbf7bf3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.478f6451.css",
+    "static/js/main.4dbf7bf3.js"
+  ]
+}
