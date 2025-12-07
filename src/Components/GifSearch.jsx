@@ -1,27 +1,36 @@
 import { Component } from "react";
-
-const gifLink = "https://api.giphy.com/v1/gifs/search?api_key=s2qIIIptNq6yG3DZ7JqYz10xZXGjmegX&q=car&limit=10&offset=0&rating=g&lang=en&bundle=messaging_non_clips";
-
 class GifSearch extends Component {
-    state = {
-        searchWord: '',
-    };
+  state = {
+    searchWord: "",
+    readySearch: false,
+  };
 
-    sav = () => {
-const axios = require('axios');
-console.log(axios);
+  save = (e) => {
+    e.preventDefault();
+    const word = e.target.elements[0].value;
+    this.setState({
+      searchWord: word,
+      readySearch: true,
+    });
+    e.target.elements[0].value = "";
+  };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.searchWord !== this.state.searchWord) {
+      console.log(this.state.searchWord);
+      this.props.function(this.state.searchWord, this.state.readySearch);
     }
+  }
 
-
-    render() {
-        console.log(this.sav());
-        return (
-            <div>
-                <h1>Введіть тему GIF яку ви бажаєте знайти</h1>
-                <input type="text" />
-            </div>
-        );
-    }
+  render() {
+    return (
+      <form onSubmit={this.save}>
+        <h1>Введіть тему GIF яку ви бажаєте знайти</h1>
+        <input type="text" />
+        <button type="submit">Пошук</button>
+      </form>
+    );
+  }
 }
 
 export default GifSearch;
